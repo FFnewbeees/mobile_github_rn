@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 import { createAppContainer } from "react-navigation";
+import NavigationUtil from "../navigators/NavigationUtil";
 
 export default class PopularPage extends Component {
   constructor(props) {
@@ -70,6 +71,13 @@ class PopularTab extends Component {
     return (
       <View style={styles.container}>
         <Text>hello</Text>
+        <Text
+          onPress={() => {
+            NavigationUtil.goPage({}, "DetailPage");
+          }}
+        >
+          Jump to Detail Page
+        </Text>
       </View>
     );
   }
@@ -89,7 +97,7 @@ const styles = StyleSheet.create({
     minWidth: 50
   },
   indicatorStyle: {
-    height:2,
+    height: 2,
     backgroundColor: "white"
   },
   labelStyle: {
