@@ -58,7 +58,7 @@ class CustomisedCheckBox extends Component {
             fillColor,
             unfillColor
           ),
-          { transform: [{ scale: springValue }] }
+          { transform: [{ scale : springValue }]}
         ]}
       >
         {iconComponent || (

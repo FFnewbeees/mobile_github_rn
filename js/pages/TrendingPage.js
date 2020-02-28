@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-//import CustomisedCheckBox from '../../components/CheckBox';
+//import CustomisedCheckBox from '../../components/CustomisedCheckBox';
 
 export default class TrendingPage extends Component {
   constructor(props) {
@@ -26,6 +26,7 @@ export default class TrendingPage extends Component {
             })
           }
         />
+
       </View>
     );
   }
