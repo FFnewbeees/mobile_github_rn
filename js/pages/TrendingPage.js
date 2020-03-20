@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-//import CustomisedCheckBox from '../../components/CustomisedCheckBox';
+import { connect } from "react-redux";
+import action from "../action";
 
-export default class TrendingPage extends Component {
+class TrendingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,16 +18,8 @@ export default class TrendingPage extends Component {
         <Text>hello</Text>
         <Button
           title={"Change Theme"}
-          onPress={() =>
-            navigation.setParams({
-              theme: {
-                tintColor: "blue",
-                updateTime: new Date().getTime()
-              }
-            })
-          }
+          onPress={() => this.props.onThemeChange("orange")}
         />
-
       </View>
     );
   }
@@ -44,3 +37,9 @@ const styles = StyleSheet.create({
     margin: 10
   }
 });
+
+const mapDispatchToProps = dispatch => ({
+  onThemeChange: theme => dispatch(action.onThemeChange(theme))
+});
+
+export default connect(null, mapDispatchToProps)(TrendingPage);

@@ -1,20 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import AppNavigator from './js/navigators/AppNavigator';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import AppWithStore from "./js/App";
 
 export default function App() {
-  return (
-    
-      <AppNavigator style={{alignItems:"center"}}/>
-   
-  );
+  return <AppWithStore style={{ alignItems: "center" }} />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });

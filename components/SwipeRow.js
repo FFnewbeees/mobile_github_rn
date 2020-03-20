@@ -16,7 +16,24 @@ const MAX_VELOCITY_CONTRIBUTION = 5;
 const SCROLL_LOCK_MILLISECONDS = 300;
 
 class SwipeRow extends Component {
-    constructor(props){
-        
-    }
+  constructor(props) {
+    super(props);
+    this.isOpen = false;
+    this.previousTrackedTranslateX = 0;
+    this.currentTranslateX = 0;
+    this.previousTrackedDirection = null;
+    this.horizontalSwipeGestureBegan = false;
+    this.swipeInitialX = null;
+    this.parentScrollEnabled = true;
+    this.ranPreview = false;
+    this._ensureScrollEnabledTimer = null;
+    this.isForceClosing = false;
+    this.state = {
+      previewRepeatInterval: null,
+      timeBetweenPreviewRepeats: null,
+      dimensionSet: false,
+      hiddenHeight: this.props.disableHiddenLayoutCalculation ? "100%" : 0,
+      hiddenWidth: this.props.disableHiddenLayoutCalculation
+    };
+  }
 }
