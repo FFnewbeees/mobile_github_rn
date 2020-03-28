@@ -78,6 +78,24 @@ class PopularTab extends Component {
         >
           Jump to Detail Page
         </Text>
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "FetchDemoPage");
+          }}
+          title={"Jump To Fetch Demo"}
+        />
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "AsyncStorageDemoPage");
+          }}
+          title={"Jump To AsyncStorage Demo"}
+        />
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "DataStoreDemoPage");
+          }}
+          title={"Jump To DataStore Demo"}
+        />
       </View>
     );
   }
