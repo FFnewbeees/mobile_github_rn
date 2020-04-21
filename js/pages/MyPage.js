@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button } from "react-native";
 import ReadMore from "../../components/ReadMore";
 import { connect } from "react-redux";
 import action from "../action";
+import NavigationUtil from "../navigators/NavigationUtil";
 
 class MyPage extends Component {
   render() {
@@ -30,6 +31,32 @@ class MyPage extends Component {
             culpa qui officia deserunt mollit anim id est laborum.
           </Text>
         </ReadMore>
+
+        <Text
+          onPress={() => {
+            NavigationUtil.goPage({}, "DetailPage");
+          }}
+        >
+          Jump to Detail Page
+        </Text>
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "FetchDemoPage");
+          }}
+          title={"Jump To Fetch Demo"}
+        />
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "AsyncStorageDemoPage");
+          }}
+          title={"Jump To AsyncStorage Demo"}
+        />
+        <Button
+          onPress={() => {
+            NavigationUtil.goPage({}, "DataStoreDemoPage");
+          }}
+          title={"Jump To DataStore Demo"}
+        />
       </View>
     );
   }
